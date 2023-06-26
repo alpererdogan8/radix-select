@@ -8,7 +8,7 @@ Allows you to add or delete the UI Components you want to install in bulk in the
 
 Add general or develop to your package.json file
 
-`npm install -g radix-select` or `npm install -D radix-select`
+`npm install -g radix-select` or `npx radix-select`
 
 ## Guide
 
