@@ -1,6 +1,6 @@
 {
   "name": "radix-select",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Selectively installs Radix Primitive components in bulk in one go  ",
   "main": "./dist/index.js",
   "type": "module",
