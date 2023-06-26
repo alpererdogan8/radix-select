@@ -37,7 +37,7 @@ You can run Cli by typing `radix-select` command in the terminal.
 
 ```
 ? Would you like to add or remove components? install
-? Select RadixUI components to install on uninstall 🔽
+? Select RadixUI components to install or uninstall 🔽
   Read more at https://www.radix-ui.com
   Accordion 🪗, Avatar 🧑, Context Menu 📝
 ✔ Install success
