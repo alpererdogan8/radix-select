@@ -1,4 +1,4 @@
 export enum InstallType {
-    INSTALL = 'install',
-    UNINSTALL = 'uninstall'
+  INSTALL = "install",
+  UNINSTALL = "uninstall",
 }

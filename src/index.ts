@@ -6,7 +6,7 @@ import { execNpm } from "./exec/execNpm.js";
 import { InstallType } from "./enums/index.js";
 import { Choice } from "./types/index.js";
 
-const answer = await inquirer.prompt<{ installType: InstallType, choices: Choice[] }>([
+const answer = await inquirer.prompt<{ installType: InstallType; choices: Choice[] }>([
   {
     type: "list",
     name: "installType",
@@ -17,9 +17,10 @@ const answer = await inquirer.prompt<{ installType: InstallType, choices: Choice
     type: "checkbox",
     loop: false,
     name: "choices",
-    message: (answers) => `Select RadixUI components to ${answers.installType} 🔽  \n  Read more at ${chalk.green(
-      "https://www.radix-ui.com"
-    )} \n `,
+    message: (answers) =>
+      `Select RadixUI components to ${answers.installType} 🔽  \n  Read more at ${chalk.green(
+        "https://www.radix-ui.com",
+      )} \n `,
     choices: choices,
     validate(answers) {
       if (answers.length < 1) {

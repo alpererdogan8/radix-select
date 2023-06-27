@@ -9,12 +9,13 @@ export const execNpm = (choices: Choice[], installType: InstallType) => {
     npmInstallCommand +
     choices
       .map(
-        (choice) =>
-          `@radix-ui${choice}${installType === InstallType.INSTALL ? "@latest -E" : ""}`
+        (choice) => `@radix-ui${choice}${installType === InstallType.INSTALL ? "@latest -E" : ""}`,
       )
       .join(" ");
 
-  const spinner = createSpinner(`${installType === InstallType.INSTALL ? "Installing" : "Uninstalling"} components...`).start();
+  const spinner = createSpinner(
+    `${installType === InstallType.INSTALL ? "Installing" : "Uninstalling"} components...`,
+  ).start();
   exec(execCode, (error, stdout, stderr) => {
     if (error) {
       console.error(`error: ${error.message}`);
@@ -28,7 +29,9 @@ export const execNpm = (choices: Choice[], installType: InstallType) => {
       return;
     }
     spinner.success({
-      text: `Components ${installType === InstallType.INSTALL ? "installed" : "uninstalled"} successfully`,
+      text: `Components ${
+        installType === InstallType.INSTALL ? "installed" : "uninstalled"
+      } successfully`,
     });
   });
 };

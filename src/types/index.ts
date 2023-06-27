@@ -1,1 +1,1 @@
-export type Choice = { name: string, value: string }
+export type Choice = { name: string; value: string };
