@@ -1,18 +1,20 @@
 import { exec } from "child_process";
 import { createSpinner } from "nanospinner";
+import { Choice } from "../types/index.js";
+import { InstallType } from "../enums/index.js";
 
-export const execNpm = (choices: string[], type: string) => {
-  const npmCommmandsInstall: string = `npm ${type} `;
-  const execCode: string =
-    npmCommmandsInstall +
+export const execNpm = (choices: Choice[], installType: InstallType) => {
+  const npmInstallCommand = `npm ${installType} `;
+  const execCode =
+    npmInstallCommand +
     choices
       .map(
-        (choice: string) =>
-          `@radix-ui${choice}${type === "install" ? "@latest -E" : ""}`
+        (choice) =>
+          `@radix-ui${choice}${installType === InstallType.INSTALL ? "@latest -E" : ""}`
       )
       .join(" ");
 
-  const spinner = createSpinner("Loading...").start();
+  const spinner = createSpinner(`${installType === InstallType.INSTALL ? "Installing" : "Uninstalling"} components...`).start();
   exec(execCode, (error, stdout, stderr) => {
     if (error) {
       console.error(`error: ${error.message}`);
@@ -26,7 +28,7 @@ export const execNpm = (choices: string[], type: string) => {
       return;
     }
     spinner.success({
-      text: `${type.charAt(0).toUpperCase() + type.slice(1)} success`,
+      text: `Components ${installType === InstallType.INSTALL ? "installed" : "uninstalled"} successfully`,
     });
   });
 };

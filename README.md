@@ -15,14 +15,14 @@ Add general or develop to your package.json file
 You can run Cli by typing `radix-select` command in the terminal.
 
 ```
-? Would you like to add or remove components? (Use arrow keys)
+? Would you like to install or uninstall components? (Use arrow keys)
 ❯ install 
   uninstall 
 ```
 
 ```
-? Would you like to add or remove components? install
-? Select RadixUI components to install on uninstall 🔽  
+? Would you like to install or uninstall components? install
+? Select RadixUI components to install 🔽  
   Read more at https://www.radix-ui.com 
   (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
 ❯◉ Accordion 🪗
@@ -36,10 +36,14 @@ You can run Cli by typing `radix-select` command in the terminal.
 ```
 
 ```
-? Would you like to add or remove components? install
-? Select RadixUI components to install or uninstall 🔽
+? Would you like to install or uninstall components? install
+? Select RadixUI components to install 🔽
   Read more at https://www.radix-ui.com
   Accordion 🪗, Avatar 🧑, Context Menu 📝
-✔ Install success
+✔ Components installed successfully
 
 ```
+
+## License
+
+radix-select is [MIT licensed](https://github.com/alpererdogan8/radix-select/blob/main/LICENSE).
