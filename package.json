@@ -12,9 +12,6 @@
     "build": "tsc && node ./dist/index.js"
   },
   "files": [
-    "LICENSE",
-    "README.md",
-    "src/",
     "dist/"
   ],
   "repository": {

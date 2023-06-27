@@ -1,4 +1,6 @@
-export const choices: object = [
+import { Choice } from "../types/index.js";
+
+export const choices: Choice[] = [
   {
     name: "Accordion 🪗",
     value: "/react-accordion",
